@@ -4,7 +4,7 @@ module.exports = app => {
 
     app.route('/users')
         .get(async (req, res) => {
-            await User.findAll({ include: [{ model: Address, attributes: ['name'] }] })
+            await User.findAll({ include: [{ model: Address, attributes: ['name', 'cp'] }] })
                 .then(result => res.json(result))
                 .catch(error => res.status(500).json({ 'error': error.message }))
         })

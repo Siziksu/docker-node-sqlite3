@@ -73,6 +73,27 @@ User + Address
 }
 ```
 
+## Seeding
+
+> This process needs `sequelize-cli` installed and the `server/config/config.json` file.
+This process will create the folder `seeders` and inside of it, each `seeder` file.  
+**Note** All this process is done inside the `server` folder.
+
+1. Go to the `server` folder
+2. To create the `seeds`, run:
+
+```bash
+$ ./node_modules/.bin/sequelize seed:create --name users-seeder
+$ ./node_modules/.bin/sequelize seed:create --name address-seeder
+```
+
+3. Edit each seed with the content that you need
+4. Seed
+
+```bash
+$ ./node_modules/.bin/sequelize db:seed:all
+```
+
 ## License
     Copyright 2019 Esteban Latre
 

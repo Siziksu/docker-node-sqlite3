@@ -1,0 +1,10 @@
+{
+    "database": "users",
+    "username": "",
+    "password": "",
+    "dialect": "sqlite",
+    "storage": "users-db.sqlite",
+    "define": {
+        "underscore": true
+    }
+}
