@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    image: node:12.4.0-alpine
+    container_name: node
+    working_dir: /server
+    volumes:
+    - ./server:/server
+    command: npm run dev
+    ports:
+    - "8080:80"
+      
