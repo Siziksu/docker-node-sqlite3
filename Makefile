@@ -10,7 +10,7 @@ upd:
 down:
 	docker-compose down
 
-server:
+container:
 	docker exec -ti node /bin/sh
 
 clear-images:
