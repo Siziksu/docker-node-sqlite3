@@ -2,11 +2,16 @@ version: '3'
 services:
   server:
     image: node:12.4.0-alpine
-    container_name: node
+    container_name: users-server
     working_dir: /server
     volumes:
     - ./server:/server
     command: npm run dev
     ports:
     - "8080:80"
+    networks:
+    - siziksu
       
+networks:
+  siziksu:
+    driver: bridge

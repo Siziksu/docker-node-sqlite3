@@ -11,7 +11,7 @@ down:
 	docker-compose down
 
 container:
-	docker exec -ti node /bin/sh
+	docker exec -ti users-server /bin/sh
 
 clear-images:
 	docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
