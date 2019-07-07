@@ -1,7 +1,10 @@
 import express from 'express'
 import consign from 'consign'
+import path from 'path'
 
 const app = express()
+app.set('dir', path.join(__dirname))
+app.set('dev', true)
 
 consign({ cwd: __dirname })
   .include('libs/settings.js')
@@ -12,4 +15,4 @@ consign({ cwd: __dirname })
   .then('libs/boot.js')
   .into(app)
 
-app.get('*', (req, res) => res.json({ 'message': 'Url not valid' }))
+app.get('*', (req, res) => res.status(404).json({ 'message': 'Url not found' }))
