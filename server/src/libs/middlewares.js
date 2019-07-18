@@ -8,8 +8,6 @@ module.exports = app => {
     app.use(express.json())
     app.use(express.urlencoded({ extended: false }))
     app.use(express.static(path.join(app.get('dir'), 'assets')))
-    app.set('views', path.join(app.get('dir'), 'views'))
-    app.set('view engine', 'ejs')
     app.use((req, res, next) => {
         req.requestTime = Date.now()
         req.requestDate = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '')
